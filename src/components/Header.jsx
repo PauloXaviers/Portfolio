@@ -91,6 +91,7 @@ const Header = () => {
           Paulo Xavier
         </motion.h2>
       )}
+      
       <nav className="bg-[#b3b3b35f] hidden md:w-[25%] xl:w-[15%] md:flex justify-center mt-2 items-center gap-10 h-12 rounded-3xl shadow-[0px_0px_5px_#b3b3b35f]">
         {NavLinks.map((v, i) => (
           <Link
@@ -104,7 +105,7 @@ const Header = () => {
       </nav>
       {/* button para entrar em contato e direcionar para o forms */}
       
-      {/* container de icones  das redes sociais */}
+      {/* container de icones das redes sociais e btn entrar em contato*/}
       <motion.div
         variants={variants}
         animate={headerHidden}
@@ -115,6 +116,7 @@ const Header = () => {
       >
         Entre em contato
       </button>
+
         {iconList.map((v, i) => (
           <img
             key={i}
@@ -159,6 +161,7 @@ const Header = () => {
               Paulo Xavier
             </motion.h2>
           )}
+
           <nav className="flex flex-col items-center gap-5">
             {NavLinks.map((v, i) => (
               <Link key={i} to={v.path} className="text-white text-xl">
@@ -166,16 +169,19 @@ const Header = () => {
               </Link>
             ))}
           </nav>
+
           <motion.button
             className=" mt-7 border shadow-[0px_0px_5px_#1FC8EE] border-[#1FC8EE] text-white h-10 w-50 rounded-2xl hover:cursor-pointer"
           >
             Entre em contato
           </motion.button>
+
           <motion.div className="flex flex-row mt-7 gap-3">
             {iconList.map((v, i) => (
               <img key={i} alt={v.alt} src={v.path} className="h-8" />
             ))}
           </motion.div>
+
         </motion.section>
       )}
       {/* header mobile */}
