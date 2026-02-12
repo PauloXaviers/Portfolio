@@ -14,6 +14,8 @@ const Home = () => {
             <div className="h-[200px]">Teste teste teste</div>
             <div className="h-[200px]">Teste teste teste</div>
             <div className="h-[200px]">Teste teste teste</div>
+            <div className="h-[200px]">Teste teste teste</div>
+            <div className="h-[200px]">Teste teste teste</div>
             
         
         </div>
