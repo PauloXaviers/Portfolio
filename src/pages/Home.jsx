@@ -1,5 +1,5 @@
 import React from "react"
-import Stagger from "../components/Stagger"
+import StaggerChildren from "../components/StaggerChildren"
 
 
 const Home = () => {
@@ -20,7 +20,7 @@ const Home = () => {
         
         </div>
 
-        <Stagger />
+        <StaggerChildren />
     </section>
     )
 }
