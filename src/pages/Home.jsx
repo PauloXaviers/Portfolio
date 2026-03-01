@@ -1,5 +1,5 @@
 import React from "react"
-import Stagger from "../components/Stagger"
+import StaggerChildren from "../components/StaggerChildren"
 
 
 const Home = () => {
@@ -14,11 +14,13 @@ const Home = () => {
             <div className="h-[200px]">Teste teste teste</div>
             <div className="h-[200px]">Teste teste teste</div>
             <div className="h-[200px]">Teste teste teste</div>
+            <div className="h-[200px]">Teste teste teste</div>
+            <div className="h-[200px]">Teste teste teste</div>
             
         
         </div>
 
-        <Stagger />
+        <StaggerChildren />
     </section>
     )
 }
