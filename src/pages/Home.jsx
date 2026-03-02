@@ -1,12 +1,12 @@
 import React from "react"
-import Stagger from "../components/Stagger"
-import AboutMe from "../components/Home/AboutMe"
+import StaggerChildren from "../components/StaggerChildren"
+import AboutMe from "../components/home/AboutMe"
 
 const Home = () => {
     return(
     <section className="flex flex-col w-screen overfle-x-hidden mt-35">
         <AboutMe />
-        <Stagger />
+        <StaggerChildren />
     </section>
     )
 }
