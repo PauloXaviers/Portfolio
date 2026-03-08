@@ -1,11 +1,11 @@
 import { motion } from "motion/react";
 import { useEffect } from "react";
-import { variants } from "../../Contents/ContentsNav";
+import { variants } from "../../contents/ContentsNav";
 import NavLinks from "./NavLinks";
 import useHeader from "./useHeader";
 import SocialIcon from "./SocialIcons";
 import HeaderMobile from "./HeaderMobile";
-import { path01Variants, path02Variants } from "../../Contents/ContentsNav";
+import { path01Variants, path02Variants } from "../../contents/ContentsNav";
 
 const Header = () => {
   const {
@@ -16,7 +16,7 @@ const Header = () => {
     path01Controls,
     path02Controls,
   } = useHeader();
-
+  
   useEffect(() => {
     if (menuMobile) {
       document.documentElement.style.overflow = "hidden";
@@ -56,7 +56,7 @@ const Header = () => {
       >
         <svg width="32" height="32" viewBox="0 0 24 24">
           <motion.path
-            {...path01Variants.closed}
+            initial={path01Variants.closed}
             animate={path01Controls}
             transition={{ duration: 0.2 }}
             stroke="#FFFFFF"
@@ -64,13 +64,13 @@ const Header = () => {
             fill="none"
           />
           <motion.path
-            {...path02Variants.closed}
+            initial={path02Variants.closed}
             animate={path02Controls}
             transition={{ duration: 0.2 }}
             stroke="#FFFFFF"
             strokeWidth="2"
+            fill="none"
           />
-          fill="none"
         </svg>
       </button>
 

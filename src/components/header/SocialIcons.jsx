@@ -1,4 +1,4 @@
-import { iconsList } from "../../Contents/ContentsNav";
+import { iconsList } from "../../contents/ContentsNav";
 
 const SocialIcon = ({ variant = "mobile" }) => {
   const classDiv =

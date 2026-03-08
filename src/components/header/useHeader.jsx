@@ -1,8 +1,10 @@
 import { useScroll, useMotionValueEvent, useAnimation } from "motion/react";
-import { useState } from "react";
-import { path01Variants, path02Variants } from "../../Contents/ContentsNav";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { path01Variants, path02Variants } from "../../contents/ContentsNav";
 
 const useHeader = () => {
+  const location = useLocation();
   const { scrollY } = useScroll();
   const [menuMobile, setMenuMobile] = useState(false);
   const [logoDesktop, setLogoDesktop] = useState(true);
@@ -19,6 +21,14 @@ const useHeader = () => {
       setHeaderHidden("visible");
     }
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setMenuMobile(false);
+    path01Controls.start(path01Variants.closed);
+    path02Controls.start(path02Variants.moving);
+    path02Controls.start(path02Variants.closed);
+  }, [location.pathname]);
 
   const reziseScreen = () => {
     if (window.innerWidth > 768) {
@@ -52,7 +62,7 @@ const useHeader = () => {
     headerHidden,
     setLogoDesktop,
     path01Controls,
-    path02Controls
+    path02Controls,
   };
 };
 export default useHeader;

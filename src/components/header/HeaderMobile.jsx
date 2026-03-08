@@ -1,9 +1,8 @@
-import useHeader from "./useHeader";
 import {
   variants,
   variantsMobile,
   variantsLogo,
-} from "../../Contents/ContentsNav";
+} from "../../contents/ContentsNav";
 import NavLinks from "./NavLinks";
 import SocialIcon from "./SocialIcons";
 import { motion } from "motion/react";
