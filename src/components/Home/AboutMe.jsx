@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 const AboutMe = () => {
   const variantsCurriculo = {
     hidden: {
-      y: 100,
+      y: 50,
       opacity: 0,
     },
     animate: {
@@ -36,7 +36,7 @@ const AboutMe = () => {
           variants={variantsText}
           initial="hidden"
           animate="animate"
-          className="relative -z-10 text-justify text-[15px] md:text-[18px] font-light"
+          className="relative -z-10 text-justify text-[15px] md:text-[18px] font-extralight"
         >
           Sou desenvolvedor Front-end apaixonado por transformar ideias em
           experiências digitais de alto impacto. Com foco em criar interfaces
