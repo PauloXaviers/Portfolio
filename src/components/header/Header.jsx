@@ -69,8 +69,8 @@ const Header = () => {
             transition={{ duration: 0.2 }}
             stroke="#FFFFFF"
             strokeWidth="2"
+            fill="none"
           />
-          fill="none"
         </svg>
       </button>
 
