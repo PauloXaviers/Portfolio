@@ -46,9 +46,9 @@ export const variantsMobile = {
     transition: { duration: 0.7, ease: "easeInOut" },
   },
   exit: {
-    x: 100,
+    x: 50,
     opacity: 0,
-    transition: { duration: 0.7, ease: "easeInOut" },
+    transition: { duration: 0.5, ease: "easeInOut" },
   },
 };
 //variants icon menu mobile
@@ -76,7 +76,14 @@ export const contentNav = [
 ];
 
 export const iconsList = [
-  { path: iconGit, alt: "Icone do git" },
-  { path: iconDownload, alt: "Icone de download" },
-  { path: iconLinkedin, alt: "Icone do Linkedin" },
+  {
+    path: iconGit,
+    alt: "Icone do git",
+    url: "https://github.com/PauloXaviers/Portfolio",
+  },
+  {
+    path: iconLinkedin,
+    alt: "Icone do Linkedin",
+    url: "https://www.linkedin.com/in/paulo-henrique18",
+  },
 ];

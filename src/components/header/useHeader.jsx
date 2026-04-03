@@ -17,7 +17,7 @@ const useHeader = () => {
     const previous = scrollY.getPrevious();
     if (latest > previous && latest > 200) {
       setHeaderHidden("hidden");
-    } else {
+    } else if(latest < previous && previous < 200){
       setHeaderHidden("visible");
     }
   });
