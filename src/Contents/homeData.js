@@ -11,6 +11,6 @@ export const containerStagger = {
 };
 
 export const itemChildren = {
-  hidden: { opacity: 0.5, y: 50 },
-  visible: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, x: 5 },
+  visible: { opacity: 1, x: 0 },
 };
