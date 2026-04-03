@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect } from "react";
 import { variants } from "../../Contents/ContentsNav";
 import NavLinks from "./NavLinks";
@@ -26,7 +26,7 @@ const Header = () => {
   }, [menuMobile]);
 
   return (
-    <header className="flex flex-row justify-between fixed top-0 items-center h-[10vh] w-screen">
+    <header className="flex flex-row justify-between fixed top-0 z-999 items-center h-[10vh] w-screen">
       {/* header do desktop */}
       {logoDesktop && (
         <motion.h2
@@ -69,13 +69,13 @@ const Header = () => {
             transition={{ duration: 0.2 }}
             stroke="#FFFFFF"
             strokeWidth="2"
+            fill="none"
           />
-          fill="none"
         </svg>
       </button>
 
       {/* header mobile */}
-      {menuMobile && <HeaderMobile />}
+      <AnimatePresence>{menuMobile && <HeaderMobile />}</AnimatePresence>
     </header>
   );
 };
