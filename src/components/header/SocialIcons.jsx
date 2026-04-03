@@ -1,7 +1,8 @@
 
 import { iconsList } from "../../Contents/ContentsNav";
-
+import { useNavigate } from "react-router-dom";
 const SocialIcon = ({ variant = "mobile" }) => {
+  const navigate = useNavigate()
   const classDiv =
     variant === "mobile" ? "flex flex-col gap-3 mt-2" : "flex flex-row gap-5";
   const classBtn =
@@ -12,7 +13,7 @@ const SocialIcon = ({ variant = "mobile" }) => {
     };
   return (
     <div className={classDiv}>
-      <button className={classBtn}>Entre em contato</button>
+      <button className={classBtn} onClick={() => navigate("/contact")}>Entre em contato</button>
       <div className="flex gap-3 justify-center">
         {iconsList.map((v, i) => (
           <img
