@@ -20,7 +20,7 @@ const HeaderMobile = () => {
         variants={variantsLogo}
         initial="initial"
         animate="animate"
-        className="text-white text-3xl absolute top-8 left-5 mb-8"
+        className="text-white text-3xl absolute top-6 left-5 mb-8"
       >
         Paulo Xavier
       </motion.h2>

@@ -32,7 +32,7 @@ const Header = () => {
         <motion.h2
           variants={variants}
           animate={headerHidden}
-          className="text-white text-3xl  px-9 whitespace-nowrap"
+          className="text-white text-3xl px-9 whitespace-nowrap"
         >
           Paulo Xavier
         </motion.h2>

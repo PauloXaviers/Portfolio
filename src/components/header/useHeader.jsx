@@ -15,7 +15,7 @@ const useHeader = () => {
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
-    if (latest > previous && latest > 200) {
+    if (latest > previous && latest > 50) {
       setHeaderHidden("hidden");
     } else if(latest < previous && previous < 200){
       setHeaderHidden("visible");
@@ -25,6 +25,7 @@ const useHeader = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setMenuMobile(false);
+    setLogoDesktop(true)
     path01Controls.start(path01Variants.closed);
     path02Controls.start(path02Variants.moving);
     path02Controls.start(path02Variants.closed);
