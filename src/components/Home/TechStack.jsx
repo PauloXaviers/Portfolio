@@ -11,7 +11,8 @@ const TechStack = () => {
       setOpenModal(!openModal)
     }
   return (
-    <section className="w-full bg-(--background-card) flex flex-row gap-5 mt-10">
+    <section className="w-full bg-(--background-card) flex flex-col gap-5 mt-10 justify-center items-center py-10">
+      <h2 className="text-white font-medium text-3xl">Tecnologias</h2>
       <motion.div
         className="w-full flex flex-wrap items-center justify-center gap-10 py-5 px-5"
         variants={containerStaggerTechs}
