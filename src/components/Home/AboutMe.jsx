@@ -12,7 +12,7 @@ const AboutMe = () => {
       opacity: 1,
       transition: {
         type: "spring",
-        stiffness: 50, // Quanto menor, mais suave
+        stiffness: 50,
         damping: 15,
       },
     },

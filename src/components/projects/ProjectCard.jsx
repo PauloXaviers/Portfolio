@@ -6,7 +6,7 @@ import { itemChildren, containerStagger } from "../../contents/homeData";
 const ProjectCard = ({ contentsCards, variant }) => {
   const [isHome] = useState(variant === "homePage");
   const [openModal, setOpenModal] = useState(false);
-  const handleToggleModa = () => {
+  const handleToggleModal = () => {
     setOpenModal(!openModal);
   };
   return (
@@ -52,7 +52,6 @@ const ProjectCard = ({ contentsCards, variant }) => {
                       {item.name}
                     </span>
                     <img
-                      variants={itemChildren}
                       src={item.imgUrl}
                       alt={`Icon-${item.name}`}
                       className="h-[80%]"
@@ -63,7 +62,7 @@ const ProjectCard = ({ contentsCards, variant }) => {
               {/* fim container com as teconologias usadas */}
               {/* button open modal */}
               {!isHome && (
-                <button onClick={() => handleToggleModa()}>Leia sobre</button>
+                <button onClick={() => handleToggleModal()}>Leia sobre</button>
               )}
               {/* fim button open modal */}
               {/* container com o link do site na web */}
