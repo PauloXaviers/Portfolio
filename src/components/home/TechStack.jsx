@@ -8,7 +8,7 @@ const TechStack = () => {
     const [selectedId, setSelectedId] = useState()
     const handleToggleModal =(id) => {
       setSelectedId(id)
-      setOpenModal(!openModal)
+      setOpenModal(id !== null ? true : !openModal )
     }
   return (
     <section className="w-full bg-(--background-card) flex flex-col gap-5 mt-10 justify-center items-center py-10">
@@ -25,12 +25,12 @@ const TechStack = () => {
             variants={itemChildrentechs}
             key={v.id}
             onClick={() => handleToggleModal(v.id)}
-            className="flex flex-col justify-center items-center gap-2 hover:cursor-pointer"
+            className="flex flex-col justify-center items-center gap-2 hover:cursor-pointer "
           >
             <img
               src={v.imgUrl}
               alt={v.altImg}
-              className="h-10 w-10 md:h-15 md:w-15"
+              className="h-10 w-10 md:h-15 md:w-15 hover:scale-125 transition-all duration-300"
             />
             <p className="text-white text-center font-extralight">
               {v.titleName}
