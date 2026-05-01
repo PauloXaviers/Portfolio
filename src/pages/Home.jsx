@@ -2,6 +2,7 @@ import React from "react"
 import AboutMe from "../components/home/AboutMe"
 import ProjectSection from "../components/projects/ProjectSection"
 import TechStack from "../components/home/TechStack"
+import WorkAndStudies from "../components/home/WorkAndStudies"
 
 const Home = () => {
     return(
@@ -9,6 +10,7 @@ const Home = () => {
         <AboutMe />
         <ProjectSection variant="homePage"/>
         <TechStack />
+        <WorkAndStudies /> 
     </section>
     )
 }

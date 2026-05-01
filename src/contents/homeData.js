@@ -8,6 +8,9 @@ import nodeIcon from "../assets/icon-node.png";
 import figmaIcon from "../assets/icon-figma.png";
 import firebaseIcon from "../assets/icon-firebase.png";
 import tailwindIcon from "../assets/icon-tailwindcss.png";
+import studyIcon from "../assets/icon-study.png";
+import workIcon from "../assets/icon-work.png";
+
 export const containerStagger = {
   hidden: {
     opacity: 0,
@@ -32,7 +35,7 @@ export const containerStaggerTechs = {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
-      ease: "easeInOut"
+      ease: "easeInOut",
     },
   },
 };
@@ -51,7 +54,6 @@ export const variantsModal = {
   },
   exit: { opacity: 0, scale: 0 },
 };
-
 
 export const techStackList = [
   {
@@ -123,5 +125,47 @@ export const techStackList = [
     text: "Estilização ágil e sob medida. Um framework CSS utilitário que permite construir layouts exclusivos e responsivos diretamente na estrutura do código, acelerando o desenvolvimento visual sem a necessidade de criar arquivos de estilo separados.",
     imgUrl: tailwindIcon,
     altImg: "Icone da tecnologia",
+  },
+];
+
+export const experienceData = [
+  {
+    role: "Desenvolvedor Front-End Júnior",
+    company: "MD Codes Institute",
+    period: "2025 - Presente",
+    type: "work",
+    activities: [
+      "Desenvolvimento Web e Mobile",
+      "Integrações de Dados",
+      "Automação de Processos",
+      "Qualidade e Padronização",
+      "Manutenção e Refatoração",
+      "Colaboração Técnica",
+    ],
+  },
+  {
+    role: "Estagiário de TI",
+    company: "MD Codes Institute",
+    period: "2024 - 2025",
+    type: "work",
+    activities: [
+      "Monitoramento de sistemas",
+      "Suporte técnico e operacional",
+      "Apoio em infraestrutura",
+      "Pesquisa e inovação",
+      "Auxílio no desenvolvimento",
+    ],
+  },
+  {
+    role: "Eng. da Computação",
+    company: "FAM - Faculdade das Américas",
+    period: "2022 - 2026",
+    type: "study",
+  },
+  {
+    role: "Desenvolvimento Web",
+    company: "Udemy",
+    period: "2022 - 2024",
+    type: "study",
   },
 ];
