@@ -1,9 +1,8 @@
-import useHeader from "./useHeader";
 import {
   variants,
   variantsMobile,
   variantsLogo,
-} from "../../Contents/ContentsNav";
+} from "../../contents/ContentsNav";
 import NavLinks from "./NavLinks";
 import SocialIcon from "./SocialIcons";
 import { motion } from "motion/react";
@@ -21,7 +20,7 @@ const HeaderMobile = () => {
         variants={variantsLogo}
         initial="initial"
         animate="animate"
-        className="text-white text-3xl absolute top-8 left-5 mb-8"
+        className="text-white text-3xl absolute top-6 left-5 mb-8"
       >
         Paulo Xavier
       </motion.h2>

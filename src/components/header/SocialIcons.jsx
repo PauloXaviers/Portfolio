@@ -1,6 +1,6 @@
-
-import { iconsList } from "../../Contents/ContentsNav";
+import { iconsList } from "../../contents/ContentsNav";
 import { useNavigate } from "react-router-dom";
+
 const SocialIcon = ({ variant = "mobile" }) => {
   const navigate = useNavigate()
   const classDiv =

@@ -1,4 +1,4 @@
-import { contentNav } from "../../Contents/ContentsNav";
+import { contentNav } from "../../contents/ContentsNav";
 import { Link } from "react-router-dom";
 
 const NavLinks = ({ variant = "mobile" }) => {

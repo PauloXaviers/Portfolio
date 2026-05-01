@@ -1,19 +1,16 @@
 import React from "react"
+import AboutMe from "../components/home/AboutMe"
+import ProjectSection from "../components/projects/ProjectSection"
+import TechStack from "../components/home/TechStack"
+import WorkAndStudies from "../components/home/WorkAndStudies"
 
 const Home = () => {
     return(
-    <section>
-        <div className="mt-10">
-            <h1 className="text-amber-600">
-                Voce esta na home
-            </h1>
-            <div className="h-[200px]">Teste teste teste</div>
-            <div className="h-[200px]">Teste teste teste</div>
-            <div className="h-[200px]">Teste teste teste</div>
-            <div className="h-[200px]">Teste teste teste</div>
-            <div className="h-[200px]">Teste teste teste</div>
-            <div className="h-[200px]">Teste teste teste</div>
-        </div>
+    <section className="flex flex-col justify-center items-center w-screen overfle-x-hidden mt-25 md:mt-35">
+        <AboutMe />
+        <ProjectSection variant="homePage"/>
+        <TechStack />
+        <WorkAndStudies /> 
     </section>
     )
 }
