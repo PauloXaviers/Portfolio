@@ -1,5 +1,4 @@
 import iconGit from "../assets/icon-github.png";
-import iconDownload from "../assets/icon-download.svg";
 import iconLinkedin from "../assets/linkedin-icon.png";
 
 // Variants do motion
