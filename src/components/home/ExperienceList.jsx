@@ -31,11 +31,10 @@ const variantsItem = {
 };
 
 const ExperienceList = () => {
-  const workExperience = experienceData.filter((v) => v.type === "work");
-  console.log(experienceData.at(-1));
+  const workExperience = experienceData.filter((v) => v.type === "Trabalho");
   if (workExperience.length === 0) return;
   return (
-    <section className="flex flex-col gap-5">
+    <section className="flex flex-col gap-5 w-full md:w-[30vw]">
       {workExperience.map((v) => (
         <div key={v.role} className="flex flex-col gap-3">
           <h3 className="text-white font-semibold text-lg">{v.role}</h3>

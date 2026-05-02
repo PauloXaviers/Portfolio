@@ -133,7 +133,7 @@ export const experienceData = [
     role: "Desenvolvedor Front-End Júnior",
     company: "MD Codes Institute",
     period: "2025 - Presente",
-    type: "work",
+    type: "Trabalho",
     activities: [
       "Desenvolvimento Web e Mobile",
       "Integrações de Dados",
@@ -142,12 +142,13 @@ export const experienceData = [
       "Manutenção e Refatoração",
       "Colaboração Técnica",
     ],
+    icon: workIcon,
   },
   {
     role: "Estagiário de TI",
     company: "MD Codes Institute",
     period: "2024 - 2025",
-    type: "work",
+    type: "Trabalho",
     activities: [
       "Monitoramento de sistemas",
       "Suporte técnico e operacional",
@@ -155,17 +156,20 @@ export const experienceData = [
       "Pesquisa e inovação",
       "Auxílio no desenvolvimento",
     ],
+    icon: workIcon,
   },
   {
     role: "Eng. da Computação",
     company: "FAM - Faculdade das Américas",
     period: "2022 - 2026",
-    type: "study",
+    type: "Estudo",
+    icon: studyIcon,
   },
   {
     role: "Desenvolvimento Web",
     company: "Udemy",
     period: "2022 - 2024",
-    type: "study",
+    type: "Estudo",
+    icon: studyIcon,
   },
 ];
