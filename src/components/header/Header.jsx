@@ -54,7 +54,7 @@ const Header = () => {
         style={{ background: "none", border: "none", cursor: "pointer" }}
         className="flex justify-between items-center md:hidden absolute right-10 z-999"
       >
-        <svg width="32" height="32" viewBox="0 0 24 24">
+        <svg width="34" height="34" viewBox="0 0 24 24">
           <motion.path
             initial={path01Variants.closed}
             animate={path01Controls}

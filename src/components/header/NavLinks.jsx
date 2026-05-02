@@ -1,7 +1,8 @@
 import { contentNav } from "../../contents/ContentsNav";
 import { Link } from "react-router-dom";
-
+import { useLocation } from "react-router-dom";
 const NavLinks = ({ variant = "mobile" }) => {
+  const location = useLocation();
   const classNav =
     variant === "mobile"
       ? "flex flex-col items-center justify-center gap-5"
@@ -13,7 +14,7 @@ const NavLinks = ({ variant = "mobile" }) => {
         <Link
           key={i}
           to={v.path}
-          className="text-white text-[17px] hover:scale-105 hover:text-(--color-blue) transition-transform duration-250"
+          className={` ${v.path === location.pathname ? "text-white" : "text-[#ffffffa2]"} text-[15px] hover:text-white hover:font-bold transition duration-250`}
         >
           {v.name}
         </Link>
