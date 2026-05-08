@@ -8,7 +8,7 @@ const useHeader = () => {
   const { scrollY } = useScroll();
   const [menuMobile, setMenuMobile] = useState(false);
   const [logoDesktop, setLogoDesktop] = useState(true);
-  const [headerHidden, setHeaderHidden] = useState("visible");
+  const [isHeaderVisible, setIsHeaderVisible] = useState("visible");
   const timerRef = useRef(null);
   const pathRef = useRef(location.pathname);
 
@@ -18,9 +18,9 @@ const useHeader = () => {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
     if (latest > previous && latest > 50) {
-      setHeaderHidden("hidden");
+      setIsHeaderVisible("hidden");
     } else if (latest < previous && previous < 200) {
-      setHeaderHidden("visible");
+      setIsHeaderVisible("visible");
     }
   });
 
@@ -45,10 +45,11 @@ const useHeader = () => {
 
     const handleUrlChange = async () => {
       if (pathRef.current !== location.pathname) {
-        window.scrollTo(0, 0);
         path01Controls.start(path01Variants.closed);
         await path02Controls.start(path02Variants.moving);
         path02Controls.start(path02Variants.closed);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setIsHeaderVisible("visible");
         setLogoDesktop(true);
         setMenuMobile(false);
         pathRef.current = location.pathname;
@@ -81,7 +82,7 @@ const useHeader = () => {
     logoDesktop,
     setLogoDesktop,
     toggleMenu,
-    headerHidden,
+    isHeaderVisible,
     path01Controls,
     path02Controls,
   };
