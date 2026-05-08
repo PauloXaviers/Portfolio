@@ -1,8 +1,8 @@
 import pyramidImg from "../assets/cards/pyramid_img.png";
 import martinsImg  from "../assets/cards/martins_img.png";
-import bootstrapImg from "../assets/icon-bootstrap.png"
-import htmlImg from "../assets/icon-html.png"
-import cssImg from "../assets/icon-css.png"
+import bootstrapImg from "../assets/bootstrap-color.svg"
+import htmlImg from "../assets/html5-color.svg"
+import cssImg from "../assets/css-color.svg"
 import iconWeb from "../assets/icon-web.png"
 
 export const classHomePage = "flex flex-col xl:flex-row gap-4 md:gap-15 w-full justify-center";

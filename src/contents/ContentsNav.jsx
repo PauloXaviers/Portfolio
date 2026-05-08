@@ -1,5 +1,5 @@
-import iconGit from "../assets/icon-github.png";
-import iconLinkedin from "../assets/linkedin-icon.png";
+import iconGit from "../assets/github-color.svg";
+import iconLinkedin from "../assets/linkedin-color.svg";
 
 export const variants = {
   hidden: {
