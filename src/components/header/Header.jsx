@@ -8,15 +8,9 @@ import HeaderMobile from "./HeaderMobile";
 import { path01Variants, path02Variants } from "../../contents/ContentsNav";
 
 const Header = () => {
-  const {
-    menuMobile,
-    logoDesktop,
-    toggleMenu,
-    headerHidden,
-    path01Controls,
-    path02Controls,
-  } = useHeader();
-  
+  const { menuMobile, logoDesktop, toggleMenu, isHeaderVisible, path01Controls, path02Controls } =
+    useHeader();
+
   useEffect(() => {
     if (menuMobile) {
       document.documentElement.style.overflow = "hidden";
@@ -31,18 +25,18 @@ const Header = () => {
       {logoDesktop && (
         <motion.h2
           variants={variants}
-          animate={headerHidden}
+          animate={isHeaderVisible}
           className="text-white text-3xl px-9 whitespace-nowrap"
         >
           Paulo Xavier
         </motion.h2>
       )}
-      <nav className="hidden w-[21%] xl:w-[15%] md:flex justify-center items-center gap-10 h-12 bg-nav-header">
+      <nav className="hidden w-[17%] min-w-50 md:flex justify-center items-center gap-10 h-12 bg-nav-header">
         <NavLinks variant="desktop" />
       </nav>
       <motion.div
         variants={variants}
-        animate={headerHidden}
+        animate={isHeaderVisible}
         className="md:flex hidden mt-1 px-12 "
       >
         <SocialIcon variant="desktop" />
