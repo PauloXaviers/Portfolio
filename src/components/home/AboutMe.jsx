@@ -38,14 +38,12 @@ const AboutMe = () => {
           animate="animate"
           className="relative -z-10 text-justify text-[15px] md:text-[18px] font-extralight"
         >
-          Sou desenvolvedor Front-end apaixonado por transformar ideias em
-          experiências digitais de alto impacto. Com foco em criar interfaces
-          modernas, intuitivas e responsivas, utilizo tecnologias como React,
-          TypeScript e Ionic para entregar soluções funcionais. Tenho sólida
-          experiência na integração de APIs REST e RESTful, garantindo a
-          comunicação eficiente entre o cliente e o servidor, além de prezar por
-          um código limpo e escalável que facilite a manutenção e o crescimento
-          da aplicação.
+          Sou desenvolvedor Front-end apaixonado por transformar ideias em experiências digitais de
+          alto impacto. Com foco em criar interfaces modernas, intuitivas e responsivas, utilizo
+          tecnologias como React, TypeScript e Ionic para entregar soluções funcionais. Tenho
+          experiência na integração de APIs REST e RESTful, garantindo a comunicação eficiente entre
+          o cliente e o servidor, além de prezar por um código limpo e escalável que facilite a
+          manutenção e o crescimento da aplicação.
         </motion.p>
       </div>
       <div className="w-[80%] md:w-[70%] xl:w-[40%]">
@@ -58,10 +56,9 @@ const AboutMe = () => {
         />
         <div className="bg-[#1B1B1B] shadow-xs shadow-amber-50 h-40 md:max-h-75 flex items-center md:-mt-10 xl:-mt-30 w-full rounded-b-2xl">
           <p className="px-2 md:px-5 font-extralight text-[12px] sm:text-[15px]">
-            Acesse meu currículo completo para conferir detalhes sobre minha
-            formação, cursos de especialização e trajetória profissional. O
-            documento reúne minhas principais competências, consolidando meu
-            perfil técnico para o mercado.
+            Acesse meu currículo completo para conferir detalhes sobre minha formação, cursos de
+            especialização e trajetória profissional. O documento reúne minhas principais
+            competências, consolidando meu perfil técnico para o mercado.
           </p>
         </div>
       </div>
