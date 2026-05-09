@@ -31,7 +31,7 @@ const Header = () => {
           Paulo Xavier
         </motion.h2>
       )}
-      <nav className="hidden w-[17%] min-w-50 md:flex justify-center items-center gap-10 h-12 bg-nav-header">
+      <nav className="hidden min-w-50 max-w-55 md:flex justify-center items-center gap-10 h-12 bg-nav-header">
         <NavLinks variant="desktop" />
       </nav>
       <motion.div
