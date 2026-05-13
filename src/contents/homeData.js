@@ -45,15 +45,6 @@ export const itemChildrentechs = {
   visible: { opacity: 1, y: 0 },
 };
 
-export const variantsModal = {
-  hidden: { opacity: 0, scale: 0 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.2, ease: "easeInOut" },
-  },
-  exit: { opacity: 0, scale: 0 },
-};
 
 export const techStackList = [
   {
