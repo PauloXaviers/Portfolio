@@ -28,7 +28,7 @@ const TimelineItem = () => {
       viewport={{ once: true }}
       className="flex items-center justify-center w-full md:w-[30vw]"
     >
-      <div className="bg-[#1B1B1B] border border-(--cor-branca) shadow-[0px_0px_5px_#fff] rounded-xl py-10 px-5 flex flex-col items-center justify-center gap-5 md:mx-5 mx-0">
+      <div className="bg-[#1B1B1B] container-shadow rounded-xl py-10 px-5 flex flex-col items-center justify-center gap-5 md:mx-5 mx-0">
         {experienceData.map((v) => (
           <div
             key={v.role}

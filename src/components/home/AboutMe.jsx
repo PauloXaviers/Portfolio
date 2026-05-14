@@ -54,7 +54,7 @@ const AboutMe = () => {
           initial="hidden"
           animate="animate"
         />
-        <div className="bg-[#1B1B1B] shadow-xs shadow-amber-50 h-40 md:max-h-75 flex items-center md:-mt-10 xl:-mt-30 w-full rounded-b-2xl">
+        <div className="bg-[#1B1B1B] container-shadow h-40 md:max-h-75 flex items-center md:-mt-10 xl:-mt-30 w-full rounded-b-2xl">
           <p className="px-2 md:px-5 font-extralight text-[12px] sm:text-[15px]">
             Acesse meu currículo completo para conferir detalhes sobre minha formação, cursos de
             especialização e trajetória profissional. O documento reúne minhas principais
