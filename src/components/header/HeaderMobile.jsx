@@ -1,8 +1,4 @@
-import {
-  variants,
-  variantsMobile,
-  variantsLogo,
-} from "../../contents/ContentsNav";
+import { mobileHeaderVariants } from "../../contents/headerData";
 import NavLinks from "./NavLinks";
 import SocialIcon from "./SocialIcons";
 import { motion } from "motion/react";
@@ -10,25 +6,17 @@ import { motion } from "motion/react";
 const HeaderMobile = () => {
   return (
     <motion.section
-      variants={variantsMobile}
+      variants={mobileHeaderVariants}
       initial="initial"
       animate="animate"
       exit="exit"
-      className="md:hidden flex w-screen sm:w-[60%] fixed top-0 right-0 bg-[#1B1B1B] h-screen flex-col justify-center items-center z-800 pt-[10vh] overflow-y-hidden"
+      className="lg:hidden absolute top-full left-1/2 -translate-x-1/2 w-[85vw] nav-header-mobile flex-col justify-center items-center"
     >
-      <motion.h2
-        variants={variantsLogo}
-        initial="initial"
-        animate="animate"
-        className="text-white text-3xl absolute top-6 left-5 mb-8"
-      >
-        Paulo Xavier
-      </motion.h2>
       <nav className="flex flex-col items-center gap-5">
-        <NavLinks variant="mobile" />
+        <NavLinks className={"flex flex-col items-center justify-center gap-5"} />
       </nav>
-      <div className="flex flex-row mt-4 gap-3">
-        <SocialIcon variant="mobile" />
+      <div className="flex flex-row items-center justify-center my-5 gap-3">
+        <SocialIcon className={"flex flex-col gap-3 mt-2"} />
       </div>
     </motion.section>
   );
