@@ -1,76 +1,61 @@
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect } from "react";
-import { variants } from "../../contents/ContentsNav";
 import NavLinks from "./NavLinks";
 import useHeader from "./useHeader";
 import SocialIcon from "./SocialIcons";
 import HeaderMobile from "./HeaderMobile";
-import { path01Variants, path02Variants } from "../../contents/ContentsNav";
+import { path01Variants, path02Variants, headerVariants } from "../../contents/headerData";
 
 const Header = () => {
-  const { menuMobile, logoDesktop, toggleMenu, isHeaderVisible, path01Controls, path02Controls } =
-    useHeader();
-
-  useEffect(() => {
-    if (menuMobile) {
-      document.documentElement.style.overflow = "hidden";
-    } else {
-      document.documentElement.style.overflow = "auto";
-    }
-  }, [menuMobile]);
+  const { menuMobile, toggleMenu, isHeaderVisible, path01Controls, path02Controls } = useHeader();
 
   return (
-    <header className="flex flex-row justify-between fixed top-0 z-999 items-center h-[10vh] w-screen">
+    <motion.header
+      variants={headerVariants}
+      animate={isHeaderVisible}
+      className={`flex flex-row fixed justify-center top-5 left-1/2 -translate-x-1/2 z-900 items-center h-auto w-[85vw] nav-header ${
+        menuMobile && "is-mobile-open"}`}
+    >
       {/* header do desktop */}
-      {logoDesktop && (
-        <motion.h2
-          variants={variants}
-          animate={isHeaderVisible}
-          className="text-white text-3xl px-9 whitespace-nowrap"
+      <section className="flex relative flex-row z-10 justify-between items-center h-auto w-full py-3 lg:py-1.5 px-10 lg:px-15">
+        <h2 className="text-white text-2xl whitespace-nowrap">Paulo Xavier</h2>
+
+        <nav className="hidden lg:flex justify-center items-center gap-10">
+          <NavLinks className={"flex flex-row justify-center items-center gap-10 h-12 w-full"} />
+        </nav>
+        <div className="hidden lg:flex">
+          <SocialIcon className={"flex flex-row gap-5"} />
+        </div>
+
+        {/* icone hamburguer mobile */}
+        <button
+          onClick={toggleMenu}
+          style={{ background: "none", border: "none", cursor: "pointer" }}
+          className="flex justify-between relative z-10 items-center lg:hidden"
         >
-          Paulo Xavier
-        </motion.h2>
-      )}
-      <nav className="hidden min-w-50 max-w-55 md:flex justify-center items-center gap-10 h-12 bg-nav-header">
-        <NavLinks variant="desktop" />
-      </nav>
-      <motion.div
-        variants={variants}
-        animate={isHeaderVisible}
-        className="md:flex hidden mt-1 px-12 "
-      >
-        <SocialIcon variant="desktop" />
-      </motion.div>
+          <svg width="30" height="30" viewBox="0 0 24 24">
+            <motion.path
+              initial={path01Variants.closed}
+              animate={path01Controls}
+              transition={{ duration: 0.2 }}
+              stroke="#FFFFFF"
+              strokeWidth="2"
+              fill="none"
+            />
+            <motion.path
+              initial={path02Variants.closed}
+              animate={path02Controls}
+              transition={{ duration: 0.2 }}
+              stroke="#FFFFFF"
+              strokeWidth="2"
+              fill="none"
+            />
+          </svg>
+        </button>
 
-      {/* icone hamburguer mobile */}
-      <button
-        onClick={toggleMenu}
-        style={{ background: "none", border: "none", cursor: "pointer" }}
-        className="flex justify-between items-center md:hidden absolute right-10 z-999"
-      >
-        <svg width="34" height="34" viewBox="0 0 24 24">
-          <motion.path
-            initial={path01Variants.closed}
-            animate={path01Controls}
-            transition={{ duration: 0.2 }}
-            stroke="#FFFFFF"
-            strokeWidth="2"
-            fill="none"
-          />
-          <motion.path
-            initial={path02Variants.closed}
-            animate={path02Controls}
-            transition={{ duration: 0.2 }}
-            stroke="#FFFFFF"
-            strokeWidth="2"
-            fill="none"
-          />
-        </svg>
-      </button>
-
-      {/* header mobile */}
-      <AnimatePresence>{menuMobile && <HeaderMobile />}</AnimatePresence>
-    </header>
+        {/* header mobile */}
+        <AnimatePresence>{menuMobile && <HeaderMobile />}</AnimatePresence>
+      </section>
+    </motion.header>
   );
 };
 

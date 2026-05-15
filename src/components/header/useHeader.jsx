@@ -1,14 +1,15 @@
 import { useScroll, useMotionValueEvent, useAnimation } from "motion/react";
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import { path01Variants, path02Variants } from "../../contents/ContentsNav";
+import { path01Variants, path02Variants } from "../../contents/headerData";
 
 const useHeader = () => {
   const location = useLocation();
   const { scrollY } = useScroll();
+
   const [menuMobile, setMenuMobile] = useState(false);
-  const [logoDesktop, setLogoDesktop] = useState(true);
   const [isHeaderVisible, setIsHeaderVisible] = useState("visible");
+
   const timerRef = useRef(null);
   const pathRef = useRef(location.pathname);
 
@@ -17,17 +18,20 @@ const useHeader = () => {
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
-    if (latest > previous && latest > 50) {
+    if (latest > previous && latest > 250) {
       setIsHeaderVisible("hidden");
-    } else if (latest < previous && previous < 200) {
+      setMenuMobile(false);
+      path01Controls.start(path01Variants.closed);
+      path02Controls.start(path02Variants.moving);
+      path02Controls.start(path02Variants.closed);
+    } else {
       setIsHeaderVisible("visible");
     }
   });
 
   useEffect(() => {
     const resizeScreen = () => {
-      if (window.innerWidth > 768) {
-        setLogoDesktop(true);
+      if (window.innerWidth > 1024) {
         setMenuMobile(false);
         path01Controls.start(path01Variants.closed);
         path02Controls.start(path02Variants.moving);
@@ -50,7 +54,6 @@ const useHeader = () => {
         path02Controls.start(path02Variants.closed);
         window.scrollTo({ top: 0, behavior: "smooth" });
         setIsHeaderVisible("visible");
-        setLogoDesktop(true);
         setMenuMobile(false);
         pathRef.current = location.pathname;
       }
@@ -73,14 +76,11 @@ const useHeader = () => {
       await path02Controls.start(path02Variants.moving);
       path02Controls.start(path02Variants.closed);
     }
-    setLogoDesktop(!logoDesktop);
   };
 
   return {
     menuMobile,
     setMenuMobile,
-    logoDesktop,
-    setLogoDesktop,
     toggleMenu,
     isHeaderVisible,
     path01Controls,

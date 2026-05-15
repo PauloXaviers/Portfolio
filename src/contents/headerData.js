@@ -1,46 +1,41 @@
 import iconGit from "../assets/github-color.svg";
 import iconLinkedin from "../assets/linkedin-color.svg";
 
-export const variants = {
+export const headerVariants = {
   hidden: {
     opacity: 0.7,
-    y: -70,
+    y: -100,
+    filter: "blur(5px)",
     transition: { duration: 0.3, ease: "easeInOut" },
   },
   visible: {
     opacity: 1,
     y: 0,
+    filter: "blur(0px)",
     transition: { duration: 0.5, ease: "easeInOut" },
   },
 };
 
-export const variantsLogo = {
+export const mobileHeaderVariants = {
   initial: {
+    y: -100,
+    scaleY: 0,
     opacity: 0,
-    x: -100,
-    transition: { duration: 0.7 },
+    zIndex: -1,
+    transition: { duration: 0.5, ease: "easeInOut" },
   },
   animate: {
+    y: 0,
+    scaleY: 1,
     opacity: 1,
-    x: 0,
-    transition: { duration: 0.5 },
-  },
-};
-
-export const variantsMobile = {
-  initial: {
-    x: 100,
-    opacity: 0,
-    transition: { duration: 0.7, ease: "easeInOut" },
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: { duration: 0.7, ease: "easeInOut" },
+    zIndex: 1,
+    transition: { duration: 0.5, ease: "easeInOut" },
   },
   exit: {
-    x: 50,
+    y: -125,
+    scaleY: 0,
     opacity: 0,
+    zIndex: -1,
     transition: { duration: 0.5, ease: "easeInOut" },
   },
 };
@@ -53,7 +48,7 @@ export const path01Variants = {
 export const path02Variants = {
   open: { d: "M3.00006 21.0607L21 3.06064" },
   moving: { d: "M0 14.5L24 14.5" },
-  closed: { d: "M0 14.5L15 14.5" }, 
+  closed: { d: "M0 14.5L15 14.5" },
 };
 // Fim variants do motion
 
@@ -65,6 +60,10 @@ export const contentNav = [
   {
     name: "Projetos",
     path: "/projects",
+  },
+  {
+    name: "Contato",
+    path: "/contact",
   },
 ];
 

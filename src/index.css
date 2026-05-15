@@ -7,7 +7,7 @@
 body {
   background-color: #242424;
   overflow-x: hidden;
-  cursor: default
+  cursor: default;
 }
 
 :root {
@@ -15,22 +15,36 @@ body {
   --background-card: #1b1b1b;
   --background-icones: #242424;
   --cor-branca: #5c6162;
+  --header-surface-shadow: 0 4px 32px rgba(0, 0, 0, 0.8);
+  --header-surface-border: rgba(48, 48, 48, 1);
 }
 
-.bg-nav-header {
-  background: rgba(255, 255, 255, 0.082);
-  border-radius: 18px;
-  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  transition:
-    box-shadow 0.3s,
-    background 0.3s;
+.nav-header,
+.nav-header-mobile {
+  background: var(--background-card);
+  box-shadow: var(--header-surface-shadow);
+  transition: background 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
-.bg-nav-header:hover {
-  background: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.22);
+
+.nav-header {
+  border-radius: 15px;
+  border: 1px solid var(--header-surface-border);
+}
+
+.nav-header.is-mobile-open {
+  border-radius: 15px 15px 0 0;
+  box-shadow: none;
+  border-bottom: none;
+}
+
+.nav-header-mobile {
+  border-radius: 0 0 15px 15px;
+  box-shadow: none;
+  padding: 15px 0px;
+  border-left: 1px solid var(--header-surface-border);
+  border-right: 1px solid var(--header-surface-border);
+  border-bottom: 1px solid var(--header-surface-border);
+  border-top: none;
 }
 
 .container-shadow {
