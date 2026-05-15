@@ -14,7 +14,7 @@ const ProjectCard = ({ contentsCards, variant }) => {
       {contentsCards.map((v, i) => (
         <div
           key={v.id}
-          className={`w-full ${isHome ? "flex flex-col gap-5" : ""} bg-(--background-card) shadow-[0px_0px_15px_#5C6162] rounded-2xl`}
+          className={`w-full ${isHome ? "flex flex-col gap-5" : ""} bg-(--background-card) container-shadow rounded-2xl`}
         >
           <img
             src={v.imgUrl}
