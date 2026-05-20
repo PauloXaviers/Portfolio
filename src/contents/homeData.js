@@ -27,24 +27,6 @@ export const itemChildren = {
   hidden: { opacity: 0, x: 5 },
   visible: { opacity: 1, x: 0 },
 };
-export const containerStaggerTechs = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      ease: "easeInOut",
-    },
-  },
-};
-
-export const itemChildrentechs = {
-  hidden: { opacity: 0, y: 3 },
-  visible: { opacity: 1, y: 0 },
-};
-
 
 export const techStackList = [
   {
