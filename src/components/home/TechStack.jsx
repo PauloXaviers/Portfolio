@@ -27,7 +27,7 @@ const TechStack = () => {
         initial={{ opacity: 0, filter: "blur(10px)" }}
         whileInView={{ opacity: 1, filter: "blur(0px)", transition: { duration: 1 } }}
         viewport={{ once: true }}
-        className="w-screen relative flex flex-nowrap items-center justify-center gap-10 py-5 px-5 overflow-hidden"
+        className="w-[98vw] lg:max-w-[95vw] relative flex flex-nowrap items-center justify-center gap-10 py-5 px-5 overflow-hidden"
       >
         <LogoLoop
           logos={techStackList}
