@@ -34,7 +34,7 @@ const ExperienceList = () => {
   const workExperience = experienceData.filter((v) => v.type === "Trabalho");
   if (workExperience.length === 0) return;
   return (
-    <section className="flex flex-col gap-5 w-full md:w-[30vw]">
+    <section className="flex flex-col gap-5 w-full min-w-60 md:max-w-[40%]">
       {workExperience.map((v) => (
         <div key={v.role} className="flex flex-col gap-3">
           <h3 className="text-white font-semibold text-lg">{v.role}</h3>
