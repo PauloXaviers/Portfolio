@@ -22,7 +22,7 @@ const ActionButton = ({ type, text, className, url, children }) => {
         variants={variants}
         href={url}
         download="Currículo Paulo Xavier"
-        className={`${className} container-shadow card-container text-white`}
+        className={`${className} container-shadow card-container text-white hover:scale-105 active:scale-95 transition-all duration-150`}
       >
         {text}
         {children}
@@ -38,7 +38,7 @@ const ActionButton = ({ type, text, className, url, children }) => {
       variants={variants}
       href={url}
       target="_blank"
-      className={`${className} container-shadow card-container text-white`}
+      className={`${className} container-shadow card-container text-white hover:scale-105 active:scale-95 transition-all duration-150`}
     >
       {text}
       {children}
