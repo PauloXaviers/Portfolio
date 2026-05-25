@@ -32,7 +32,7 @@ const AboutMe = () => {
   };
   return (
     <section className="flex flex-col gap-5 w-[80%] items-center justify-center h-auto mt-35 lg:mt-0 lg:h-screen">
-      <div className="w-full flex flex-wrap justify-center items-center gap-10 md:gap-5">
+      <div className="w-full flex flex-wrap justify-between items-center gap-10 md:gap-5">
         <div className="flex flex-col gap-5 w-full lg:w-[60%]">
           <h1 className="text-white text-md md:text-2xl whitespace-nowrap">
             Desenvolvedor front-end Júnior
