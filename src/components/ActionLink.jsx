@@ -1,6 +1,7 @@
+
 import { motion } from "motion/react";
 
-const ActionButton = ({ type, text, className, url, children }) => {
+const ActionLink = ({ type, className, url, children }) => {
   const variants = {
     hidden: {
       opacity: 0,
@@ -9,6 +10,7 @@ const ActionButton = ({ type, text, className, url, children }) => {
       opacity: 1,
       transition: {
         duration: 1,
+        delay: 0.2
       },
     },
   };
@@ -24,7 +26,6 @@ const ActionButton = ({ type, text, className, url, children }) => {
         download="Currículo Paulo Xavier"
         className={`${className} container-shadow card-container text-white hover:scale-105 active:scale-95 transition-all duration-150`}
       >
-        {text}
         {children}
       </motion.a>
     );
@@ -40,10 +41,9 @@ const ActionButton = ({ type, text, className, url, children }) => {
       target="_blank"
       className={`${className} container-shadow card-container text-white hover:scale-105 active:scale-95 transition-all duration-150`}
     >
-      {text}
       {children}
     </motion.a>
   );
 };
 
-export default ActionButton;
+export default ActionLink;

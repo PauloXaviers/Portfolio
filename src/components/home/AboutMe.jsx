@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import profilePicture from "../../assets/img-perfil.png";
 import downloadIcon from "../../assets/download-icon.png";
 import phoneIcon from "../../assets/phone-icon.png";
-import ActionButton from "../ActionButton";
+import ActionLink from "../ActionLink";
 
 const AboutMe = () => {
   const variantsContainer = {
@@ -38,7 +38,10 @@ const AboutMe = () => {
           animate="visible"
           className="flex flex-col gap-5 w-full lg:w-[60%]"
         >
-          <motion.h1 variants={variantsItem} className="text-white text-md md:text-2xl whitespace-nowrap" >
+          <motion.h1
+            variants={variantsItem}
+            className="text-white text-md md:text-2xl whitespace-nowrap"
+          >
             Desenvolvedor front-end Júnior
           </motion.h1>
           <motion.div
@@ -53,18 +56,22 @@ const AboutMe = () => {
             }}
             className="bg-white h-0.5 container-shadow rounded-2xl w-full origin-left"
           />
-          <motion.h2 variants={variantsItem} className="text-white text-xl md:text-3xl xl:text-5xl ">
+          <motion.h2
+            variants={variantsItem}
+            className="text-white text-xl md:text-3xl xl:text-5xl "
+          >
             Criando experiências digitais com código.
           </motion.h2>
-          <motion.p variants={variantsItem} className="text-white font-extralight md:font-light text-[12px] md:text-[15px]" >
-            Sou desenvolvedor Front-end apaixonado por transformar ideias em
-            experiências digitais de alto impacto. Com foco em criar interfaces
-            modernas, intuitivas e responsivas, utilizo tecnologias como React,
-            TypeScript e Ionic para entregar soluções funcionais. Tenho
-            experiência na integração de APIs REST e RESTful, garantindo a
-            comunicação eficiente entre o cliente e o servidor, além de prezar
-            por um código limpo e escalável que facilite a manutenção e o
-            crescimento da aplicação.
+          <motion.p
+            variants={variantsItem}
+            className="text-white font-extralight md:font-light text-[12px] md:text-[15px]"
+          >
+            Sou desenvolvedor Front-end apaixonado por transformar ideias em experiências digitais
+            de alto impacto. Com foco em criar interfaces modernas, intuitivas e responsivas,
+            utilizo tecnologias como React, TypeScript e Ionic para entregar soluções funcionais.
+            Tenho experiência na integração de APIs REST e RESTful, garantindo a comunicação
+            eficiente entre o cliente e o servidor, além de prezar por um código limpo e escalável
+            que facilite a manutenção e o crescimento da aplicação.
           </motion.p>
         </motion.div>
 
@@ -86,21 +93,21 @@ const AboutMe = () => {
         />
       </div>
       <div className="flex flex-row items-center justify-center gap-7 mt-10">
-        <ActionButton
-          className="w-40 md:w-56 p-3 rounded-2xl text-[10px] md:text-[13px] gap-5 flex flex-nowrap justify-center items-center whitespace-nowrap text-center"
-          text="Download CV"
+        <ActionLink
+          className="w-40 md:w-56 p-3 rounded-2xl text-[10px] md:text-[13px] gap-5 flex flex-nowrap justify-center items-center text-center"
           url="/Curriculo Paulo Xavier - New.pdf"
           type="download"
         >
+          Download CV
           <img src={downloadIcon} className="w-3 h-3 md:w-5 md:h-5" alt="Icone de Download" />
-        </ActionButton>
-        <ActionButton
-          className="w-40 md:w-56 rounded-2xl text-[10px] md:text-[13px] p-3 gap-5 flex flex-nowrap justify-center items-center whitespace-nowrap text-center"
-          text="Entre em contato"
+        </ActionLink>
+        <ActionLink
+          className="w-40 md:w-56 rounded-2xl text-[10px] md:text-[13px] p-3 gap-5 flex flex-nowrap justify-center items-center text-center"
           url="https://wa.me/5511981909538"
         >
+          Entre em contato
           <img src={phoneIcon} className="w-3 h-3 md:w-5 md:h-5" alt="Icone de telefone" />
-        </ActionButton>
+        </ActionLink>
       </div>
     </section>
   );
