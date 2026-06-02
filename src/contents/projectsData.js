@@ -5,9 +5,48 @@ import htmlImg from "../assets/html5-color.svg";
 import cssImg from "../assets/css-color.svg";
 import iconWeb from "../assets/icon-web.png";
 
-export const classHomePage =
-  "flex flex-col xl:flex-row gap-4 md:gap-15 w-full justify-center";
-export const classProjectsPage = "";
+export const variantsTitle = {
+  hidden: { x: -50, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      delay: 0.3,
+      type: "spring",
+      stiffness: 70,
+      damping: 15,
+    },
+  },
+};
+
+export const variantsContainer = {
+  hidden: { opacity: 0, y: 70 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.3, ease: "ease" } },
+};
+
+export const containerStagger = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+  },
+};
+export const childrenStagger = {
+  hidden: {
+    x: -10,
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 70,
+      damping: 15,
+    },
+  },
+};
 
 export const projectDetails = {
   title: "Projetos",

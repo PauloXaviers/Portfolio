@@ -1,48 +1,18 @@
-
-import { motion } from "motion/react";
-
 const ActionLink = ({ type, className, url, children }) => {
-  const variants = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-        delay: 0.2
-      },
-    },
-  };
+  const classes = `${className} container-shadow card-container text-white hover:scale-105 active:scale-95 transition-transform duration-150 will-change-transform`;
 
   if (type === "download") {
     return (
-      <motion.a
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={variants}
-        href={url}
-        download="Currículo Paulo Xavier"
-        className={`${className} container-shadow card-container text-white hover:scale-105 active:scale-95 transition-all duration-150`}
-      >
+      <a href={url} download="Currículo Paulo Xavier" className={classes}>
         {children}
-      </motion.a>
+      </a>
     );
   }
 
   return (
-    <motion.a
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={variants}
-      href={url}
-      target="_blank"
-      className={`${className} container-shadow card-container text-white hover:scale-105 active:scale-95 transition-all duration-150`}
-    >
+    <a href={url} target="_blank" rel="noreferrer" className={classes}>
       {children}
-    </motion.a>
+    </a>
   );
 };
 

@@ -92,7 +92,18 @@ const AboutMe = () => {
           className="w-[70%] sm:w-[50%] md:w-[30%] min-w-75 max-w-100 shrink-0 rounded-full container-shadow"
         />
       </div>
-      <div className="flex flex-row items-center justify-center gap-7 mt-10">
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: 1,
+          transition: {
+            duration: 1,
+            delay: 0.5,
+          },
+        }}
+        className="flex flex-row items-center justify-center gap-7 mt-10"
+      >
         <ActionLink
           className="w-40 md:w-56 p-3 rounded-2xl text-[10px] md:text-[13px] gap-5 flex flex-nowrap justify-center items-center text-center"
           url="/Curriculo Paulo Xavier - New.pdf"
@@ -108,7 +119,8 @@ const AboutMe = () => {
           Entre em contato
           <img src={phoneIcon} className="w-3 h-3 md:w-5 md:h-5" alt="Icone de telefone" />
         </ActionLink>
-      </div>
+      </motion.div>
+      
     </section>
   );
 };
