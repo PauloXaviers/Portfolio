@@ -52,3 +52,7 @@ body {
 .container-shadow {
   box-shadow: 0px 0px 10px #5c6162;
 }
+
+.card-container{
+  background-color: var(--background-card);
+}

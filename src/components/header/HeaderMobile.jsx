@@ -10,7 +10,7 @@ const HeaderMobile = () => {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="lg:hidden absolute top-full left-1/2 -translate-x-1/2 w-[85vw] nav-header-mobile flex-col justify-center items-center"
+      className="lg:hidden absolute top-full left-1/2 -translate-x-1/2 w-[90vw] nav-header-mobile flex-col justify-center items-center"
     >
       <nav className="flex flex-col items-center gap-5">
         <NavLinks className={"flex flex-col items-center justify-center gap-5"} />

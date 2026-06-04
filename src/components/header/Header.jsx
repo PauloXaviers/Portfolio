@@ -12,7 +12,7 @@ const Header = () => {
     <motion.header
       variants={headerVariants}
       animate={isHeaderVisible}
-      className={`flex flex-row fixed justify-center top-5 left-1/2 -translate-x-1/2 z-900 items-center h-auto w-[85vw] nav-header ${
+      className={`flex flex-row fixed justify-center top-5 left-1/2 -translate-x-1/2 z-900 items-center h-auto w-[90vw] nav-header ${
         menuMobile && "is-mobile-open"}`}
     >
       {/* header do desktop */}

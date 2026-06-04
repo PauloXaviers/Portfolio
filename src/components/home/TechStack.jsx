@@ -22,7 +22,7 @@ const TechStack = () => {
 
   return (
     <section className="w-full bg-(--background-card) flex flex-col gap-5 mt-10 justify-center items-center py-10">
-      <h2 className="text-white font-medium text-3xl">Tecnologias</h2>
+      <h2 className="text-white font-semibold text-[22px] md:text-2xl">Tecnologias</h2>
       <motion.div
         initial={{ opacity: 0, filter: "blur(10px)" }}
         whileInView={{ opacity: 1, filter: "blur(0px)", transition: { duration: 1 } }}
@@ -50,7 +50,7 @@ const TechStack = () => {
                 alt={tech.altImg}
                 className="h-10 w-10 md:h-15 md:w-15 transition-all duration-300 hover:scale-90"
               />
-              <p className="text-white text-center font-extralight text-sm">{tech.titleName}</p>
+              <p className="text-white text-center font-extralight text-[12px] md:text-[15px]">{tech.titleName}</p>
             </motion.div>
           )}
         />
