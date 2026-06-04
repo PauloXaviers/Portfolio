@@ -23,11 +23,11 @@ const variants = {
 };
 const WorkAndStudies = () => {
   return (
-    <section className="w-full flex justify-center items-center flex-col gap-10 mt-20">
-      <h3 className="text-white text-2xl w-[80%] font-semibold text-start">
+    <section className="w-[80%] flex justify-center items-center flex-col gap-10 mt-20">
+      <h3 className="text-white w-full text-[22px] md:text-2xl font-semibold text-start">
         Experiência e Formação
       </h3>
-      <section className="flex flex-wrap gap-10 items-center justify-center md:justify-between md:items-start w-[80%]">
+      <section className="flex flex-wrap gap-10 items-center justify-center md:justify-between md:items-start w-full">
         <ExperienceList />
 
         <Card.Container className="w-full min-w-80 max-w-105 md:w-[25vw] py-10 gap-5 rounded-2xl">

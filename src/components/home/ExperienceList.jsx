@@ -37,7 +37,7 @@ const ExperienceList = () => {
     <section className="flex flex-col gap-5 w-full min-w-60 md:max-w-[40%]">
       {workExperience.map((v) => (
         <div key={v.role} className="flex flex-col gap-3">
-          <h3 className="text-white font-semibold text-lg">{v.role}</h3>
+          <h3 className="text-white font-semibold text-[18px] md:text-xl">{v.role}</h3>
           <h4 className="text-white">{v.company}</h4>
           <motion.ul
             initial="hidden"
@@ -49,7 +49,7 @@ const ExperienceList = () => {
               <motion.li
                 key={i}
                 variants={variantsItem}
-                className="text-white font-extralight py-1 flex items-start gap-2"
+                className="text-white font-extralight py-1 flex items-start gap-2 text-[12px] md:text-[15px]"
               >
                 <motion.span className="text-white">•</motion.span>
                 {item};
