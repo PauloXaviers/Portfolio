@@ -23,7 +23,7 @@ const variants = {
 };
 const WorkAndStudies = () => {
   return (
-    <section className="w-[80%] flex justify-center items-center flex-col gap-10 mt-20">
+    <section className="w-[80%] flex justify-center items-center flex-col gap-10 mt-20 mb-10">
       <h3 className="text-white w-full text-[22px] md:text-2xl font-semibold text-start">
         Experiência e Formação
       </h3>

@@ -21,7 +21,7 @@ const TechStack = () => {
   const isVisible = selectedTech !== null;
 
   return (
-    <section className="w-full bg-(--background-card) flex flex-col gap-5 mt-10 justify-center items-center py-10">
+    <section className="w-full bg-(--background-card) flex flex-col gap-5 mt-10 justify-center items-center py-10 overflow-x-hidden!">
       <h2 className="text-white font-semibold text-[22px] md:text-2xl">Tecnologias</h2>
       <motion.div
         initial={{ opacity: 0, filter: "blur(10px)" }}
@@ -43,7 +43,7 @@ const TechStack = () => {
             <motion.div
               onClick={() => modalOpen(tech)}
               key={key}
-              className="flex flex-col justify-center items-center shrink-0 gap-2 cursor-pointer h-full"
+              className="flex flex-col justify-center items-center shrink-0 gap-2 cursor-pointer h-full overflow-hidden!"
             >
               <img
                 src={tech.imgUrl}

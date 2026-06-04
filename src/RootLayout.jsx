@@ -5,8 +5,8 @@ import LightRays from "../@/components/LightRays";
 
 const RootLayout = () => {
   return (
-    <div>
-      <div style={{ width: "100vw", height: "100vh", position: "fixed", zIndex: "-40" }}>
+    <div className="overflow-x-hidden! w-full relative">
+      <div style={{ width: "100%", height: "100vh", position: "fixed", zIndex: "-40", left: 0, top: 0 }}>
         <LightRays
           raysOrigin="top-center"
           raysColor="#ffffff"
