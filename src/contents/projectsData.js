@@ -1,5 +1,6 @@
 import pyramidImg from "../assets/cards/pyramid_img.png";
 import martinsImg from "../assets/cards/martins_img.png";
+import techStoreImg from "../assets/cards/techstore_img.png";
 import bootstrapImg from "../assets/bootstrap-color.svg";
 import htmlImg from "../assets/html5-color.svg";
 import cssImg from "../assets/css-color.svg";
@@ -22,7 +23,11 @@ export const variantsTitle = {
 
 export const variantsContainer = {
   hidden: { opacity: 0, y: 70 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.3, ease: "ease" } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, delay: 0.3, ease: "ease" },
+  },
 };
 
 export const containerStagger = {
@@ -76,7 +81,7 @@ export const cardsProjects = [
       title: "Pyramid Empilhadeiras",
       description:
         "Desenvolvi este site institucional com o objetivo de entregar uma solução que fosse, acima de tudo, fiel ao que o cliente precisava. O foco foi criar uma interface profissional e clara, que transmitisse a confiança necessária para o setor de empilhadeiras.\n\nTecnologias: Projeto estruturado utilizando HTML, CSS e Bootstrap.\n\nO processo: Priorizei um fluxo de trabalho ágil, focando na organização do conteúdo e na responsividade, para garantir que o site ficasse visualmente impecável em qualquer tela.\n\nO resultado foi uma página leve, funcional e que atendeu exatamente às expectativas do cliente, equilibrando um design limpo com uma experiência de navegação eficiente.",
-        url: "https://pyramidempilhadeiras.com.br/"
+      url: "https://pyramidempilhadeiras.com.br/",
     },
     subname: "Tecnologias usadas",
     techList: [
@@ -109,7 +114,13 @@ export const cardsProjects = [
       "Site institucional desenvolvido para uma empresa de contabilidade online, com foco na apresentação dos serviços contábeis, clareza das informações e fortalecimento da presença digital da marca.",
     imgUrl: martinsImg,
     imgAlt: "Imagem que representa a capa do projeto desenvolvido",
-    videoData: null, // Deixe como null caso esse projeto ainda não tenha um vídeo
+    videoData: {
+      videoUrl: "/videos/Martins contabilidade - Google Chrome 2026-06-05 09-38-49.mp4",
+      title: "Contabilidade Martins",
+      description:
+        "Site institucional desenvolvido para uma empresa de contabilidade online, com foco na apresentação dos serviços contábeis, clareza das informações e fortalecimento da presença digital da marca.",
+      url: null,
+    },
     subname: "Tecnologias usadas",
     techList: [
       {
@@ -130,7 +141,45 @@ export const cardsProjects = [
         name: "URL Site",
         imgUrl: iconWeb,
         imgAlt: "Icone Web",
-        url: "",
+        url: null,
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Tech Store",
+    description:
+      "Site feito para um processo seletivo",
+    imgUrl: techStoreImg,
+    imgAlt: "Imagem que representa a capa do projeto desenvolvido",
+    videoData: {
+      videoUrl: "/videos/techstore - Google Chrome 2026-06-05 09-48-56.mp4",
+      title: "Contabilidade Martins",
+      description:
+        "Teste sobre apis e também sobre testes unitarios ",
+      url: null,
+    },
+    subname: "Tecnologias usadas",
+    techList: [
+      {
+        name: "HTML5",
+        imgUrl: htmlImg,
+      },
+      {
+        name: "CSS3",
+        imgUrl: cssImg,
+      },
+      {
+        name: "BOOTSTRAP",
+        imgUrl: bootstrapImg,
+      },
+    ],
+    projectUrl: [
+      {
+        name: "URL Site",
+        imgUrl: iconWeb,
+        imgAlt: "Icone Web",
+        url: null,
       },
     ],
   },
