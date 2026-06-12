@@ -60,7 +60,7 @@ const ProjectSection = ({ variant = "homePage" }) => {
             className={`flex justify-center items-start rounded-2xl ${isHome ? "w-full lg:w-[40vw] min-h-90 h-auto" : "w-full"}`}
           >
             <Card.Content className={`${isHome ? cardStyle.home : cardStyle.project}`}>
-              <img src={item.imgUrl} className="rounded-2xl w-full object-cover" />
+              <img src={item.imgUrl} alt={item.imgAlt} className={`rounded-2xl w-full object-cover ${!isHome && "xl:w-[40vw] xl:min-w-[40vw]"}`} />
               <div className={`flex flex-col w-full px-5 gap-3 pb-5 ${!isHome && "py-5"}`}>
                 <h3 className="text-white text-xl text-[17px] md:text-[22px]">{item.name}</h3>
                 <p className="text-white font-extralight text-[12px] md:text-[15px]">{item.description}</p>
