@@ -5,6 +5,7 @@ import Card from "./card/index.jsx";
 import ActionLink from "./ActionLink.jsx";
 import { Modal } from "./modal/index.jsx";
 import { useNavigate } from "react-router-dom";
+import { useLenis } from "lenis/react";
 
 const ProjectSection = ({ variant = "homePage" }) => {
   const isHome = variant === "homePage";
@@ -13,15 +14,18 @@ const ProjectSection = ({ variant = "homePage" }) => {
   const [{ text }, { text: projectPageText }] = projectDetails.description;
   const [modal, setModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const lenis = useLenis()
   const navigate = useNavigate()
 
   const handleCloseModal = () => {
     setModal(false);
+    lenis.start()
     setSelectedProject(null);
   };
 
   const handleOpenModal = (project) => {
     setModal(true);
+    lenis.stop()
     setSelectedProject(project);
   };
 
@@ -35,8 +39,7 @@ const ProjectSection = ({ variant = "homePage" }) => {
       <motion.div
         className="flex flex-col w-full items-center justify-center gap-5"
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+        {...(isHome ? {whileInView: "visible", viewport: {once: true}} : {animate: "visible"})}
         variants={variantsTitle}
       >
         <div className="w-full flex flex-col gap-3 mb-4">
@@ -48,8 +51,7 @@ const ProjectSection = ({ variant = "homePage" }) => {
       <motion.section
         variants={variantsContainer}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+        {...(isHome ? {whileInView: "visible", viewport: {once: true}} : {animate: "visible"})}
         className={`w-full items-start justify-center gap-7 ${
           isHome ? "flex flex-col lg:flex-row " : "flex flex-col"
         }`}
