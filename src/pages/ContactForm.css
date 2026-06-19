@@ -1,0 +1,32 @@
+.contact-input{
+    outline: none;
+    border-bottom: 1px solid white;
+    padding: 2px 4px;
+    color: white;
+    width: 100%;
+    transition-duration: 200ms;
+}
+.contact-input:focus{
+     box-shadow: 0 15px 10px -8px #5c6162;
+}
+
+.contact-input-error{
+    outline: none;
+    border-bottom: 1px solid red;
+    padding: 2px 4px;
+    color: white;
+    width: 100%;
+    transition-duration: 200ms;
+}
+
+.contact-input-error:focus{
+     box-shadow: 0 10px 15px -10px red;
+}
+
+.contact-input:-webkit-autofill,
+.contact-input:-webkit-autofill:hover,
+.contact-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  caret-color: white;
+  -webkit-background-clip: text;
+}
