@@ -5,29 +5,33 @@ import Card from "./card/index.jsx";
 import ActionLink from "./ActionLink.jsx";
 import { Modal } from "./modal/index.jsx";
 import { useNavigate } from "react-router-dom";
+import { useLenis } from "lenis/react";
 
 const ProjectSection = ({ variant = "homePage" }) => {
   const isHome = variant === "homePage";
-  const contentList = isHome ? cardsProjects.slice(0, 2) : cardsProjects.length;
+  const contentList = isHome ? cardsProjects.slice(0, 2) : cardsProjects;
   const { title } = projectDetails;
   const [{ text }, { text: projectPageText }] = projectDetails.description;
   const [modal, setModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const lenis = useLenis()
   const navigate = useNavigate()
 
   const handleCloseModal = () => {
     setModal(false);
+    lenis.start()
     setSelectedProject(null);
   };
 
   const handleOpenModal = (project) => {
     setModal(true);
+    lenis.stop()
     setSelectedProject(project);
   };
 
-  const cardClass = {
+  const cardStyle = {
     home: "flex flex-col gap-5 items-center justify-center w-full",
-    project: "flex flex-col md:flex-row gap-5 items-center justify-center ",
+    project: "flex flex-col xl:flex-row gap-5 items-stretch justify-start min-w-full h-full ",
   };
 
   return (
@@ -35,12 +39,11 @@ const ProjectSection = ({ variant = "homePage" }) => {
       <motion.div
         className="flex flex-col w-full items-center justify-center gap-5"
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+        {...(isHome ? {whileInView: "visible", viewport: {once: true}} : {animate: "visible"})}
         variants={variantsTitle}
       >
         <div className="w-full flex flex-col gap-3 mb-4">
-          {isHome ? ( <h2 className="font-normal text-white text-[20px] md:text-2xl">{title}</h2>) : ( <h1 className="">{title}</h1>) }
+          {isHome ? ( <h2 className="font-normal text-white text-[20px] md:text-2xl">{title}</h2>) : ( <h1 className="text-white text-[22px] md:text-3xl">{title}</h1>) }
           <p className="text-white font-extralight text-justify text-[12px] md:text-[15px]">{isHome ? text : projectPageText}</p>
         </div>
       </motion.div>
@@ -48,8 +51,7 @@ const ProjectSection = ({ variant = "homePage" }) => {
       <motion.section
         variants={variantsContainer}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+        {...(isHome ? {whileInView: "visible", viewport: {once: true}} : {animate: "visible"})}
         className={`w-full items-start justify-center gap-7 ${
           isHome ? "flex flex-col lg:flex-row " : "flex flex-col"
         }`}
@@ -57,11 +59,11 @@ const ProjectSection = ({ variant = "homePage" }) => {
         {contentList.map((item) => (
           <Card.Container
             key={item.id}
-            className={`flex justify-center items-start rounded-2xl ${!isHome ? "w-full lg:w-[40vw] min-h-90 h-auto" : "w-full"}`}
+            className={`flex justify-center items-start rounded-2xl ${isHome ? "w-full lg:w-[40vw] min-h-90 h-auto" : "w-full"}`}
           >
-            <Card.Content className={`${isHome ? cardClass.home : cardClass.project}`}>
-              <img src={item.imgUrl} className="rounded-2xl w-full" />
-              <div className="flex flex-col w-full px-5 gap-3 pb-5">
+            <Card.Content className={`${isHome ? cardStyle.home : cardStyle.project}`}>
+              <img src={item.imgUrl} alt={item.imgAlt} className={`rounded-2xl w-full object-cover ${!isHome && "xl:w-[40vw] xl:min-w-[40vw]"}`} />
+              <div className={`flex flex-col w-full px-5 gap-3 pb-5 ${!isHome && "py-5"}`}>
                 <h3 className="text-white text-xl text-[17px] md:text-[22px]">{item.name}</h3>
                 <p className="text-white font-extralight text-[12px] md:text-[15px]">{item.description}</p>
                 <span className="text-white">{item.subname}</span>
@@ -131,7 +133,7 @@ const ProjectSection = ({ variant = "homePage" }) => {
         </AnimatePresence>
       </motion.section>
       
-      <button onClick={() => navigate("/projects")} className="my-10 text-white hover:scale-105 active:scale-95 transition-transform duration-150 will-change-transform cursor-pointer">Veja mais</button>
+      {isHome && (<button onClick={() => navigate("/projects")} className="my-10 text-white hover:scale-105 active:scale-95 transition-transform duration-150 will-change-transform cursor-pointer">Veja mais projetos</button>)}
     </section>
   );
 };
