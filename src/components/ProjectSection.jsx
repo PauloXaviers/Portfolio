@@ -133,7 +133,7 @@ const ProjectSection = ({ variant = "homePage" }) => {
         </AnimatePresence>
       </motion.section>
       
-      {isHome && (<button onClick={() => navigate("/projects")} className="my-10 text-white hover:scale-105 active:scale-95 transition-transform duration-150 will-change-transform cursor-pointer">Veja mais</button>)}
+      {isHome && (<button onClick={() => navigate("/projects")} className="my-10 text-white hover:scale-105 active:scale-95 transition-transform duration-150 will-change-transform cursor-pointer">Veja mais projetos</button>)}
     </section>
   );
 };
