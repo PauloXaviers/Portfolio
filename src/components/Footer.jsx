@@ -11,12 +11,15 @@ const Footer = () => {
         style={{ scaleX }}
         className="w-[90%] h-0.5 bg-white origin-center container-shadow rounded-xl!"
       />
-      <div className=" flex flex-col gap-10 w-[80%] items-center justify-center">
+      <nav
+        aria-label="Navegação do rodapé"
+        className=" flex flex-col gap-10 w-[80%] items-center justify-center"
+      >
         <NavLinks className="flex md:flex-row flex-col gap-7 items-center" />
         <SocialIcons />
-      </div>
+      </nav>
       <p className="text-white text-center text-[12px] md:text-[14px] pb-10 w-[80%]">
-        Site desenvolvido por Paulo Xavier. Todos os direitos reservados
+        © {new Date().getFullYear()} Paulo Xavier. Todos os direitos reservados.
       </p>
     </footer>
   );

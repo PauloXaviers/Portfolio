@@ -42,7 +42,7 @@ const AboutMe = () => {
             variants={variantsItem}
             className="text-white text-md md:text-2xl whitespace-nowrap"
           >
-            Desenvolvedor front-end Júnior
+            Desenvolvedor front-end
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
