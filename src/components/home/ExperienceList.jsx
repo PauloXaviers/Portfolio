@@ -34,31 +34,31 @@ const ExperienceList = () => {
   const workExperience = experienceData.filter((v) => v.type === "Trabalho");
   if (workExperience.length === 0) return;
   return (
-    <section className="flex flex-col gap-5 w-full min-w-60 md:max-w-[40%]">
+    <div className="flex flex-col gap-5 w-full min-w-60 md:max-w-[40%]">
       {workExperience.map((v) => (
-        <div key={v.role} className="flex flex-col gap-3">
-          <h3 className="text-white font-semibold text-[18px] md:text-xl">{v.role}</h3>
-          <h4 className="text-white">{v.company}</h4>
+        <article key={v.role} className="flex flex-col gap-3">
+          <h4 className="text-white font-semibold text-[18px] md:text-xl">{v.role}</h4>
+          <h5 className="text-white">{v.company}</h5>
           <motion.ul
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={variantsContainer}
+            className="list-disc pl-5"
           >
             {v.activities.map((item, i) => (
               <motion.li
                 key={i}
                 variants={variantsItem}
-                className="text-white font-extralight py-1 flex items-start gap-2 text-[12px] md:text-[15px]"
-              >
-                <motion.span className="text-white">•</motion.span>
+                className="text-white font-extralight py-1 text-[12px] md:text-[15px]"
+              > 
                 {item};
               </motion.li>
             ))}
           </motion.ul>
-        </div>
+        </article>
       ))}
-    </section>
+    </div>
   );
 };
 export default ExperienceList;
