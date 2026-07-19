@@ -7,12 +7,12 @@ import AboutMe from "../components/home/AboutMe";
 
 const Home = () => {
   return (
-    <section className="flex flex-col justify-center items-center w-screen overflow-x-hidden">
+    <main className="flex flex-col justify-center items-center w-screen overflow-x-hidden">
       <AboutMe />
       <ProjectSection variant="homePage" />
       <TechStack />
       <WorkAndStudies />
-    </section>
+    </main>
   );
 };
 
