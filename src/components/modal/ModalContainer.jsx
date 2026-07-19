@@ -13,6 +13,8 @@ const ModalContainer = ({ children }) => {
   };
   return (
     <motion.div
+      role="dialog"
+      aria-modal="true"
       variants={variantsModal}
       initial="hidden"
       animate="visible"
