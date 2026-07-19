@@ -32,36 +32,43 @@ const WorkAndStudies = () => {
 
         <Card.Container className="w-full min-w-80 max-w-105 md:w-[25vw] py-10 gap-5 rounded-2xl">
           <Card.Content className="px-10 gap-5 flex flex-col">
-            {experienceData.map((item) => (
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={variants}
-                key={item.role}
-                className="w-full justify-between flex flex-row gap-5"
-              >
-                <div className="w-[50%]">
-                  <h3 className="text-white font-medium text-start text-[12px] md:text-sm w-full my-1">
-                    {item.company}
-                  </h3>
-                  <div className="flex flex-row w-full items-center justify-start gap-2">
-                    <span className="text-white font-extralight text-[10px] md:text-[12px] text-start">
-                      {item.type}
-                    </span>
-                    <img src={item.icon} className="h-4 md:h-5" alt="Icone do tipo do serviço" />
+            <ul className="flex flex-col gap-5">
+              {experienceData.map((item) => (
+                <motion.li
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={variants}
+                  key={item.role}
+                  className="w-full justify-between flex flex-row gap-5"
+                >
+                  <div className="w-[50%]">
+                    <p className="text-white font-medium text-start text-[12px] md:text-sm w-full my-1">
+                      {item.company}
+                    </p>
+                    <div className="flex flex-row w-full items-center justify-start gap-2">
+                      <span className="text-white font-extralight text-[10px] md:text-[12px] text-start">
+                        {item.type}
+                      </span>
+                      <img
+                        src={item.icon}
+                        className="h-4 md:h-5"
+                        aria-hidden="true"
+                        alt=""
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="flex flex-col items-center justify-center w-[50%]">
-                  <span className="text-white font-light text-start w-full text-[10px] md:text-[12px]">
-                    {item.period}
-                  </span>
-                  <p className="text-white font-extralight text-start w-full text-[10px] md:text-[12px]">
-                    {item.role}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+                  <div className="flex flex-col items-center justify-center w-[50%]">
+                    <span className="text-white font-light text-start w-full text-[10px] md:text-[12px]">
+                      {item.period}
+                    </span>
+                    <p className="text-white font-extralight text-start w-full text-[10px] md:text-[12px]">
+                      {item.role}
+                    </p>
+                  </div>
+                </motion.li>
+              ))}
+            </ul>
           </Card.Content>
         </Card.Container>
       </section>

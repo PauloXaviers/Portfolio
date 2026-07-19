@@ -4,5 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
+  sourcemap: false,
   plugins: [react(), tailwindcss()],
+  build: {sourcemap: false}
 });

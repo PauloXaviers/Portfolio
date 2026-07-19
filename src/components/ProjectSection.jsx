@@ -1,21 +1,20 @@
 import { projectDetails, cardsProjects, variantsTitle, containerStagger, variantsContainer, childrenStagger } from "../contents/projectsData.js";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
+import { Modal } from "./modal/index.jsx";
+import { Link } from "react-router-dom";
+import { useLenis } from "lenis/react";
 import Card from "./card/index.jsx";
 import ActionLink from "./ActionLink.jsx";
-import { Modal } from "./modal/index.jsx";
-import { useNavigate } from "react-router-dom";
-import { useLenis } from "lenis/react";
 
 const ProjectSection = ({ variant = "homePage" }) => {
   const isHome = variant === "homePage";
   const contentList = isHome ? cardsProjects.slice(0, 2) : cardsProjects;
   const { title } = projectDetails;
-  const [{ text }, { text: projectPageText }] = projectDetails.description;
+  const [{ text: homeText }, { text: projectPageText }] = projectDetails.description;
   const [modal, setModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const lenis = useLenis()
-  const navigate = useNavigate()
 
   const handleCloseModal = () => {
     setModal(false);
@@ -44,7 +43,7 @@ const ProjectSection = ({ variant = "homePage" }) => {
       >
         <div className="w-full flex flex-col gap-3 mb-4">
           {isHome ? ( <h2 className="font-normal text-white text-[20px] md:text-2xl">{title}</h2>) : ( <h1 className="text-white text-[22px] md:text-3xl">{title}</h1>) }
-          <p className="text-white font-extralight text-justify text-[12px] md:text-[15px]">{isHome ? text : projectPageText}</p>
+          <p className="text-white font-extralight text-justify text-[12px] md:text-[15px]">{isHome ? homeText : projectPageText}</p>
         </div>
       </motion.div>
 
@@ -64,9 +63,9 @@ const ProjectSection = ({ variant = "homePage" }) => {
             <Card.Content className={`${isHome ? cardStyle.home : cardStyle.project}`}>
               <img src={item.imgUrl} alt={item.imgAlt} className={`rounded-2xl w-full object-cover ${!isHome && "xl:w-[40vw] xl:min-w-[40vw]"}`} />
               <div className={`flex flex-col w-full px-5 gap-3 pb-5 ${!isHome && "py-5"}`}>
-                <h3 className="text-white text-xl text-[17px] md:text-[22px]">{item.name}</h3>
+                <Card.Title className="text-white text-xl text-[17px] md:text-[22px]">{item.name}</Card.Title>
                 <p className="text-white font-extralight text-[12px] md:text-[15px]">{item.description}</p>
-                <span className="text-white">{item.subname}</span>
+                <h4 className="text-white">{item.subname}</h4>
                 <motion.div
                   initial="hidden"
                   whileInView="visible"
@@ -80,7 +79,7 @@ const ProjectSection = ({ variant = "homePage" }) => {
                       key={tech.name}
                       className="card-container container-shadow flex flex-row gap-2 items-center justify-center rounded-md py-1 px-2"
                     >
-                      <img src={tech.imgUrl} className="w-6 md:w-8" alt="Imagem do icone da técnologia" />
+                      <img src={tech.imgUrl} className="w-6 md:w-8" alt={`Icone ${tech.name}`} />
                       <p className="text-white font-extralight text-[12px] md:text-[14px]">{tech.name}</p>
                     </motion.div>
                   ))}
@@ -92,7 +91,7 @@ const ProjectSection = ({ variant = "homePage" }) => {
                   Leia sobre
                 </button>
                 {item.projectUrl.map((link) => (
-                  <ActionLink
+                  <ActionLink 
                     url={link.url}
                     key={link.name}
                     className="card-container whitespace-nowrap text-[12px] md:text-[15px] py-1 px-1 flex flex-row gap-2 items-center justify-center rounded-md w-30 md:w-40"
@@ -133,7 +132,7 @@ const ProjectSection = ({ variant = "homePage" }) => {
         </AnimatePresence>
       </motion.section>
       
-      {isHome && (<button onClick={() => navigate("/projects")} className="my-10 text-white hover:scale-105 active:scale-95 transition-transform duration-150 will-change-transform cursor-pointer">Veja mais projetos</button>)}
+      {isHome && (<Link to="/projects" className="my-10 text-white hover:scale-105 active:scale-95 transition-transform duration-150 will-change-transform cursor-pointer">Veja mais projetos</Link>)}
     </section>
   );
 };

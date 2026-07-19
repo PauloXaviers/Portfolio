@@ -59,7 +59,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="w-full flex flex-col items-center justify-center min-h-screen h-auto mt-20 md:mt-10 gap-15">
+    <main className="w-full flex flex-col items-center justify-center min-h-screen h-auto mt-20 md:mt-10 gap-15">
       <h1 className="text-2xl md:text-3xl text-white">Entre em contato</h1>
       <form
         id="contactForm"
@@ -85,7 +85,7 @@ const ContactForm = () => {
       >
         {submitLabel}
       </button>
-    </section>
+    </main>
   );
 };
 export default ContactForm;
