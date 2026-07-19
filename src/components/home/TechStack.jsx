@@ -37,21 +37,23 @@ const TechStack = () => {
           gap={70}
           fadeOut={true}
           hoverSpeed={0}
+          ariaLabel={"Logos das tecnologias"}
           fadeOutColor="#1b1b1b"
-          arialLabel={"Logos das tecnologias"}
           renderItem={(tech, key) => (
-            <motion.div
+            <motion.button
               onClick={() => modalOpen(tech)}
               key={key}
+              aria-label={`Ver detalhes sobre ${tech.titleName}`}
               className="flex flex-col justify-center items-center shrink-0 gap-2 cursor-pointer h-full overflow-hidden!"
             >
               <img
                 src={tech.imgUrl}
-                alt={tech.altImg}
+                alt=""
+                aria-hidden="true"
                 className="h-10 w-10 md:h-15 md:w-15 transition-all duration-300 hover:scale-90"
               />
               <p className="text-white text-center font-extralight text-[12px] md:text-[15px]">{tech.titleName}</p>
-            </motion.div>
+            </motion.button>
           )}
         />
       </motion.div>
@@ -63,7 +65,7 @@ const TechStack = () => {
               <div className="flex flex-row gap-5 items-center">
                 <img
                   src={selectedTech?.imgUrl}
-                  alt={selectedTech?.altImg}
+                  alt=""
                   className="h-10 w-10 md:h-15 md:w-15"
                 />
                 <h3 className="text-white text-center font-bold text-2xl">
