@@ -35,16 +35,23 @@ const ActionLink = ({ type, className, url, children }) => {
         )}
       </AnimatePresence>
 
-      <a
-        href={url}
-        target="_blank"
-        rel="noreferrer"
-        className={styles}
-        onClick={handleOpenModal}
-        {...(type === "download" && { download: "Currículo Paulo Xavier" })}
-      >
-        {children}
-      </a>
+      {url !== null && (
+        <a
+          href={url}
+          target="_blank"
+          rel="noreferrer"
+          className={styles}
+          {...(type === "download" && { download: "Currículo Paulo Xavier" })}
+        >
+          {children}
+        </a>
+      )}
+
+      {url === null && (
+        <button className={styles} onClick={handleOpenModal}>
+          {children}
+        </button>
+      )}
     </>
   );
 };
