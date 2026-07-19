@@ -78,7 +78,7 @@ export const cardsProjects = [
     description:
       "Desenvolvimento de site para empresa de empilhadeiras, projetado para destacar os serviços oferecidos, reforçar a credibilidade da marca e facilitar a captação de novos clientes.",
     imgUrl: pyramidImg,
-    imgAlt: "Imagem que representa a capa do projeto desenvolvido",
+    imgAlt: "Capa projeto Pyramid Empilhadeiras",
     videoData: {
       videoUrl:
         "/videos/Pyramid Empilhadeiras - Google Chrome 2026-05-31 13-08-08.mp4",
@@ -122,7 +122,7 @@ export const cardsProjects = [
     description:
       "Site desenvolvido para uma empresa de contabilidade online, com foco na apresentação dos serviços contábeis, clareza das informações e fortalecimento da presença digital da marca.",
     imgUrl: martinsImg,
-    imgAlt: "Imagem que representa a capa do projeto desenvolvido",
+    imgAlt: "Capa projeto Martins Contabilidade",
     videoData: {
       videoUrl:
         "/videos/Martins contabilidade - Google Chrome 2026-06-05 09-38-49.mp4",
@@ -165,7 +165,7 @@ export const cardsProjects = [
     name: "Tech Store",
     description: "Projeto desenvolvido como desafio para um processo seletivo, focado na criação de uma interface de e-commerce funcional e dinâmica.",
     imgUrl: techStoreImg,
-    imgAlt: "Imagem que representa a capa do projeto desenvolvido",
+    imgAlt: "Capa projeto Tech Store",
     videoData: {
       videoUrl: "/videos/techstore - Google Chrome 2026-06-05 09-48-56.mp4",
       title: "Tech Store",
