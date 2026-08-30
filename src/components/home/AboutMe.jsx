@@ -113,7 +113,7 @@ const AboutMe = () => {
       >
         <ActionLink
           className="w-40 md:w-56 p-3 rounded-2xl text-[10px] md:text-[13px] gap-5 flex flex-nowrap justify-center items-center text-center"
-          url="/Curriculo Paulo Xavier - New.pdf"
+          url="/Curriculo Paulo Xavier.pdf"
           type="download"
         >
           Download CV
