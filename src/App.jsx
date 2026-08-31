@@ -7,6 +7,7 @@ import RootLayout from "./RootLayout";
 import { ReactLenis } from "lenis/react";
 import { cancelFrame, frame } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const lenisRef = useRef(null);
@@ -25,7 +26,7 @@ function App() {
   useEffect(() => {
     const lenis = lenisRef.current?.lenis;
     if (lenis) {
-      lenis.start()
+      lenis.start();
       lenis.scrollTo(0, { immediate: false });
       return;
     }
@@ -41,6 +42,7 @@ function App() {
           <Route path="/contact" element={<ContactForm />} />
         </Route>
       </Routes>
+      <Analytics />
     </ReactLenis>
   );
 }
